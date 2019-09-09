@@ -1,0 +1,33 @@
+setBackgroundColor(0, 0, 0);
+run("Clear Outside", "stack");
+run("Crop");
+run("Subtract Background...", "rolling=5 stack");
+run("Median 3D...", "x=1 y=1 z=0");
+run("Morphological Filters (3D)", "operation=[White Top Hat] element=Cube x-radius=3 y-radius=3 z-radius=0");
+run("Median 3D...", "x=1 y=1 z=0");
+setAutoThreshold("Default");
+//run("Threshold...");
+setAutoThreshold("Default");
+setOption("BlackBackground", false);
+run("Convert to Mask", "method=Otsu background=Dark calculate black");
+rename("BIN");
+run("Duplicate...", "title=[BIN Sub] duplicate");
+selectWindow("BIN Sub");
+setPasteMode("Subtract");
+     run("Set Slice...", "slice="+nSlices);
+     run("Select All");
+     for(i=1; i<nSlices; i++) {
+         run("Previous Slice [<]");
+         run("Copy");
+         run("Next Slice [>]");
+         run("Paste");
+         run("Previous Slice [<]");
+     }
+run("Invert LUT");
+run("Set Measurements...", "area area_fraction limit display redirect=None decimal=3");
+run("Analyze Particles...", "display summarize stack");
+run("Binary Overlay", "reference=BIN binary=[BIN Sub] overlay=Red");
+selectWindow("BIN");
+run("Invert LUT");
+run("Analyze Particles...", "display summarize stack");
+run("Invert LUT");
