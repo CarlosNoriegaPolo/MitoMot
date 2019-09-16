@@ -45,7 +45,7 @@ What this macro basically does is:
 
 1. Start by opening your timelapse in Fiji by dragging & dropping or by    File > Open. It is recommended to open the .czi file format as it contains all the metadata needed, but many other file formats will work too (including .avi). 
 
-Make sure to select Hyperstack in the “Bio-Formats Import Options” 	dialog box. 
+   Make sure to select Hyperstack in the “Bio-Formats Import Options” 	dialog box. 
 
 2. Select the cell or area you want to analyze by any of the tools offered  by the Fiji program. After drawing the selection, make sure to go through all the frames and change it accordingly so that it applies to all. 
 
