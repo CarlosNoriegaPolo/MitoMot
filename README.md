@@ -1,6 +1,6 @@
 # MitoMot v1.2 Guide
 
-MitoMot is an ImageJ/Fiji macro creaed to analyze Mitochondria Motility. It is still a work in progress so make sure you have the latest possible version. And if you have any doubts, find any bugs or want further information on how I created it, just send me an email at: carnopo@alumni.uv.es.
+MitoMot is an ImageJ/Fiji macro created to analyze Mitochondria Motility. It is still a work in progress so make sure you have the latest possible version. And if you have any doubts, find any bugs or want further information on how I created it, just send me an email at: carnopo@alumni.uv.es.
 
 
 ## Prerequisites:
